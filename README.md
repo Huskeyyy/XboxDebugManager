@@ -16,36 +16,6 @@
 
 ---
 
-## Example usage
-
-```c#
- static async Task Main()
-    {
-        // Create and manage the debug controller
-        using var debugController = new DebugMonitorController();
-
-        // Subscribe to log output events
-        debugController.LogMessageReceived += (s, msg) => Console.WriteLine($"[Log] {msg}");
-
-        // Subscribe to debugger event notifications (e.g. breakpoints, exceptions)
-        debugController.DebugEventOccurred += (s, e) => Console.WriteLine($"[Debug] {e.Message}");
-
-        // Start the debugger and connect to the console
-        await debugController.StartDebuggingAsync();
-
-        // Freeze the console (e.g. pause execution)
-        await debugController.FreezeConsoleAsync();
-
-        // Unfreeze the console (resume execution)
-        await debugController.UnfreezeConsoleAsync();
-
-        // Stop debugging and clean up connections
-        await debugController.StopDebuggingAsync();
-    }
-```
-
----
-
 ## 🚀 Getting Started
 
 ### Requirements
